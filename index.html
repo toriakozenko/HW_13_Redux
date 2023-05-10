@@ -5,9 +5,64 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
+  <header>
+    <nav class="header-navigation"> 
+      <div class="main-container">
+        <div class="header-wrapper">
+          <div>
+            <img class="logo" src="./img/logo.svg" alt="logo">
+          </div>
+          <div>
+            <span class="profit-span">Our profit:</span><span class="profit-span">100</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="main-container">
+      <ul class="unorder-list">
+        <li class="list">
+          <img class="pic" src="./img/beer-can.png" alt="beer-pic">
+          <h2 class="head">Beer</h2>
+          <p class="paragraph">
+            Drinking alcohol is harmful to your health!
+          </p>
+          <span class="beer-quantity">100 pcs</span>/<span class="beer-price">100 uah</span>
+        </li>
+        <li class="list">
+          <img class="pic" src="./img/cigarettes.png" alt="cigarettes-pic">
+          <h2 class="head">Cigarettes</h2>
+          <p class="paragraph">
+            Smoking kills!
+          </p>
+          <span class="cigarettes-quantity">100 pcs</span>/<span class="cigarettes-price">100 uah</span>
+        </li>
+        <li class="list">
+          <img class="pic" src="./img/chips.png" alt="chips-pic">
+          <h2 class="head">Chips</h2>
+          <p class="paragraph">
+            But chips are delicious!
+          </p>
+          <span class="chips-quantity">100 pcs</span>/<span class="chips-price">100 uah</span>
+        </li>
+      </ul>
+      <div class="shopping-container">
+        <select class= "input" id="select-goods">
+          <option value="beer">Beer</option>
+          <option value="cigarettes">Cigarettes</option>
+          <option value="chips">Chips</option>
+        </select>
+        <input class="input quantity" type="number" placeholder="Pcs you want">
+        <input class="input cost" type="number" placeholder="Money you have">
+        <button class="shopping-button">Buy</button>
+      </div>
+    </section>
+  </main>
+  <footer><span class="footer-bottom">Copyright © 2023</span></footer>
   <script src="./index.js"></script>
 </body>
 </html>
