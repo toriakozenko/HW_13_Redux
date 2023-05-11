@@ -8,51 +8,10 @@ const cigarettesPrice = document.querySelector('.cigarettes-price');
 const chipsQuantity = document.querySelector('.chips-quantity');
 const chipsPrice = document.querySelector('.chips-price');
 
-const selectOfGoods = document.querySelector('.select-goods'); //загальний селектор з товарами
+const selectOfGoods = document.querySelector('.select-goods');
 const quantityOfGoods = document.querySelector('.quantity');
 const costOfGoods = document.querySelector('.cost');
 
-selectOfGoods.addEventListener('click', () => {
-  console.log(event)
-})
-
-
-function reducer(state, {type, what, quantity, cost}){ 
- 
-  if (!state){ 
-      return {
-        beer: {
-          quantity: 100,
-          cost: 30
-        },
-        cigarettes: {
-          quantity: 110,
-          cost: 80
-        },
-        chips: {
-          quantity: 150,
-          cost: 50
-        },
-        profit: 0
-      }
-  }
-  if (type === 'buy'){ 
-      return {
-        ...state, 
-        [what]: state[what] - cost
-      }
-  }
-  return state;
-}
-
-let state = reducer(undefined, {}) //перший виклик
-console.log(state)
-state  = reducer(state, {type: 'buy', what: 'beer', quantity: 5})
-console.log(state)
-
-// if () {
-
-// }
 
 function createStore(reducer){
   let state  = reducer(undefined, {});
@@ -74,5 +33,40 @@ function createStore(reducer){
       dispatch,
       subscribe 
   }
+}
+
+const store = createStore(reducer);
+
+
+function reducer(state, {type, what, quantity, cost}){ 
+ 
+  if (!state){ 
+      return {
+        beer: {
+          quantity: 100,
+          cost: 10
+        },
+        cigarettes: {
+          quantity: 140,
+          cost: 20
+        },
+        chips: {
+          quantity: 200,
+          cost: 50
+        },
+        profit: 0
+      }
+  }
+  
+  let unit = state[what].quantity;
+  let price = state[what].cost;
+
+  if (type === 'buy'){ 
+      return {
+        ...state, 
+        [what]: state[what] - cost
+      }
+  }
+  return state;
 }
 
