@@ -88,19 +88,19 @@ function reducer(state, {type, what, quantity, cash}){
 
   if (type === 'buy'){ 
     if(unit < quantity){
-      alert('There is not enough goods.Bye!')
+      alert("Sorry, but we haven't enough goods. Come later.!")
       return {
         ...state
       }
     }
     if(cash < totalPrice){
-      alert('There is not enough money. You must earn the money somewhere!')
+      alert('Not enough money. You must earn the money somewhere and come again!')
       return {
         ...state
       }
     }
     if(cash >= totalPrice){
-      alert('There are your goods, brother!');
+      alert('Here is your goods, friend!');
       return {
         ...state, 
         [what]: {...state[what], quantity: unit - quantity},
